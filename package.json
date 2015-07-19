@@ -1,6 +1,6 @@
 {
   "name": "winston2",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Winston with prettier logging",
   "main": "index.js",
   "dependencies": {

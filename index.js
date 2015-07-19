@@ -1,11 +1,10 @@
 var Winston = require('winston');
 var Util = require('util');
 
-var wrapFunc = function(oldFunc, startIndex) {
-    startIndex = startIndex || 0;
+var wrapFunc = function(oldFunc) {
     return function() {
         var args = Array.prototype.slice.call(arguments);
-        for (var i = startIndex; i < args.length; i++){
+        for (var i = 0; i < args.length; i++){
             if (typeof args[i] !== 'string' && args[i] instanceof String === false) {
                 args[i] = Util.inspect(arguments[i]);
             }
@@ -15,7 +14,7 @@ var wrapFunc = function(oldFunc, startIndex) {
     };
 };
 
-Winston.log = wrapFunc(Winston.log, 1);
+Winston.log = wrapFunc(Winston.log);
 Winston.info = wrapFunc(Winston.info);
 Winston.error = wrapFunc(Winston.error);
 Winston.debug = wrapFunc(Winston.debug);
