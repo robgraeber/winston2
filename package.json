@@ -1,7 +1,7 @@
 {
   "name": "winston2",
-  "version": "1.0.2",
-  "description": "Winston with prettier logging",
+  "version": "1.0.3",
+  "description": "Winston with console.log style logging",
   "main": "index.js",
   "dependencies": {
     "winston": "^1.0.1"

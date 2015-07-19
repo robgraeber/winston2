@@ -1,7 +1,23 @@
 # Winston2
 
-A multi-transport async logging library for node.js. Winston2 is a modified Winston to have console.log style logging.
+A multi-transport async logging library for node.js. Winston2 is a modified Winston to have more console.log style logging.
 
+From this:
+```
+info: Rows: 1=Date, 2=Statement Closing Date, 3=Deposit / Withdraw, 4=Total Principal, 5=Total Accrued Interest, 6=Net Account Value (NAR), 7=Net Income, 8=Internal Rate of Return (XIRR),
+```
+To this:
+```
+info: Rows: { '1': 
+   { '1': 'Date',
+     '2': 'Statement Closing Date',
+     '3': 'Deposit / Withdraw',
+     '4': 'Total Principal',
+     '5': 'Total Accrued Interest',
+     '6': 'Net Account Value (NAR)',
+     '7': 'Net Income',
+     '8': 'Internal Rate of Return (XIRR)' },
+```
 ## Motivation
 Winston2 is designed to be a simple and universal logging library with support for multiple transports. A transport is essentially a storage device for your logs. Each instance of a winston logger can have multiple transports configured at different levels. For example, one may want error logs to be stored in a persistent remote location (like a database), but all logs output to the console or a local file.
 
